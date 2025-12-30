@@ -177,6 +177,29 @@ article blockquote {
 }
 
 /* =========================
+   BACK BUTTON
+========================= */
+.icon-button {
+  width: auto;
+  padding: 0.4rem 0.6rem;
+  font-size: 1.1rem;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#backButton {
+  margin-top: 1rem;
+}
+
+.icon-button:hover {
+  background: var(--code-bg);
+}
+
+
+/* =========================
    UTILITIES
 ========================= */
 [hidden] {
