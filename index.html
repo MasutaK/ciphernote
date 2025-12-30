@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>CipherNote - Encrypted Notes</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Markdown renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>📝 Encrypted Notes</h1>
+  <button id="themeToggle">🌓</button>
+</header>
+
+<main>
+  <section id="editorSection">
+    <textarea id="markdownInput"></textarea>
+
+    <input
+      type="password"
+      id="passwordInput"
+      placeholder="Password (mandatory)"
+    />
+
+    <button id="generateLink">Generate link</button>
+
+    <input
+      type="text"
+      id="shareLink"
+      readonly
+      placeholder="Share link"
+    />
+  </section>
+
+  <section id="viewerSection" hidden>
+    <article id="markdownOutput"></article>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
