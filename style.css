@@ -1,0 +1,96 @@
+/* ========== Variables ========== */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --accent: #2563eb;
+  --border: #e5e7eb;
+  --code-bg: #f3f4f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --accent: #60a5fa;
+    --border: #334155;
+    --code-bg: #020617;
+  }
+}
+
+html[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #111111;
+}
+
+html[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+}
+
+/* ========== Global ========== */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+textarea,
+input,
+button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ========== Markdown ========== */
+article h1, article h2, article h3 {
+  border-bottom: 1px solid var(--border);
+}
+
+article pre {
+  background: var(--code-bg);
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+article code {
+  background: var(--code-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
