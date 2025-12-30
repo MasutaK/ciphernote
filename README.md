@@ -2,6 +2,7 @@
 
 Client-side encrypted Markdown notes, shareable through secure URLs.  
 No backend. No tracking. No storage.
+URL : https://masutak.github.io/ciphernote/index.html
 
 ---
 
