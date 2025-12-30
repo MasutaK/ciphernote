@@ -1,4 +1,4 @@
-// ELEMENTS
+// ==================== ELEMENTS DOM ====================
 const textarea = document.getElementById("textarea");
 const passwordInput = document.getElementById("passwordInput");
 const generateLink = document.getElementById("generateLink");
@@ -10,16 +10,14 @@ const editorSection = document.getElementById("editorSection");
 const themeToggle = document.getElementById("themeToggle");
 
 // ==================== THEME TOGGLE ====================
-function updateTheme() {
+themeToggle.addEventListener("click", () => {
   const currentTheme = document.documentElement.getAttribute("data-theme");
   if (currentTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "light");
   } else {
     document.documentElement.setAttribute("data-theme", "dark");
   }
-}
-
-themeToggle.addEventListener("click", updateTheme);
+});
 
 // ==================== ENCRYPTION / DECRYPTION ====================
 async function getKey(password) {
@@ -66,7 +64,7 @@ async function decryptMessage(data, password) {
   return new TextDecoder().decode(dec);
 }
 
-// ==================== GENERATE / PARSE URL ====================
+// ==================== GENERATE LINK ====================
 generateLink.addEventListener("click", async () => {
   const message = textarea.value;
   const password = passwordInput.value;
