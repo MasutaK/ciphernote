@@ -108,13 +108,13 @@ generateLink.addEventListener("click", async () => {
   editorSection.hidden = true;
   viewerSection.hidden = false;
 
-  const password = prompt("Mot de passe pour déchiffrer la note :");
+  const password = prompt("Password to decrypt the note: ");
   if (!password) return;
 
   try {
     const decrypted = await decrypt(location.hash.substring(1), password);
     output.innerHTML = marked.parse(decrypted);
   } catch {
-    output.textContent = "❌ Impossible de déchiffrer la note.";
+    output.textContent = "❌ Unable to decrypt the note.";
   }
 })();
