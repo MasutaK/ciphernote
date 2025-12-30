@@ -9,6 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const backButton = document.getElementById("backButton");
   const editorSection = document.getElementById("editorSection");
   const themeToggle = document.getElementById("themeToggle");
+  const messageBox = document.getElementById("message");
+
+  // Function to show message in DOM
+  function showMessage(text, duration = 10000) {
+    messageBox.textContent = text;
+    messageBox.classList.remove("hidden");
+    messageBox.classList.add("show");
+
+    setTimeout(() => {
+      messageBox.classList.remove("show");
+      setTimeout(() => messageBox.classList.add("hidden"), 500); // correspond à la transition CSS
+    }, duration);
+  }
 
   // ==================== THEME TOGGLE ====================
   themeToggle.addEventListener("click", () => {
@@ -69,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   generateLink.addEventListener("click", async () => {
     const message = textarea.value;
     const password = passwordInput.value;
-    if (!message || !password) return alert("Please enter note and password");
+    if (!message || !password) return showMessage("Please enter note and password");
 
     const encrypted = await encryptMessage(message, password);
     const url = `${location.origin}${location.pathname}#${encodeURIComponent(encrypted)}`;
@@ -81,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     shareLink.select();
     shareLink.setSelectionRange(0, 99999); // mobile support
     document.execCommand("copy");
-    alert("Link copied to clipboard!");
+    showMessage("Link copied to clipboard!");
   });
 
   // ==================== CHECK URL HASH ====================
@@ -96,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const decrypted = await decryptMessage(hash, password);
       showNoteDecrypted(marked.parse(decrypted));
     } catch (e) {
-      alert("Failed to decrypt. Wrong password?");
+      showMessage("Failed to decrypt. Wrong password?");
       location.hash = "";
     }
   }
