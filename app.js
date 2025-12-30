@@ -73,7 +73,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const encrypted = await encryptMessage(message, password);
     const url = `${location.origin}${location.pathname}#${encodeURIComponent(encrypted)}`;
-    shareLink.innerHTML = `<a href="${url}" target="_blank">Copy or share this link</a>`;
+
+    // Mettre le lien dans l'input readonly
+    shareLink.value = url;
+
+    // Copier automatiquement dans le presse-papiers
+    shareLink.select();
+    shareLink.setSelectionRange(0, 99999); // mobile support
+    document.execCommand("copy");
+    alert("Link copied to clipboard!");
   });
 
   // ==================== CHECK URL HASH ====================
@@ -106,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     editorSection.hidden = false;
     textarea.value = "";
     passwordInput.value = "";
+    shareLink.value = "";
     window.location.hash = "";
   });
 
