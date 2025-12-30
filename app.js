@@ -118,3 +118,22 @@ generateLink.addEventListener("click", async () => {
     output.textContent = "❌ Unable to decrypt the note.";
   }
 })();
+
+const previewSection = document.getElementById("previewSection");
+const notePreview = document.getElementById("notePreview");
+const backButton = document.getElementById("backButton");
+const editorSection = document.getElementById("editorSection");
+const textarea = document.getElementById("textarea");
+
+function showNoteDecrypted(content) {
+  editorSection.hidden = true;
+  notePreview.innerHTML = content; // markdown déjà converti en HTML
+  previewSection.hidden = false;
+}
+
+backButton.addEventListener("click", () => {
+  previewSection.hidden = true;
+  editorSection.hidden = false;
+  textarea.value = "";      
+  window.location.hash = "";
+});
