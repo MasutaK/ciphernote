@@ -118,8 +118,14 @@ button:not(.icon-button):hover {
 }
 
 #shareLink {
-  margin-top: 1rem;
+  font-family: monospace;
   font-size: 0.9rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none; /* Pas nécessaire pour input, mais ça fait pas de mal */
+  overflow-x: auto;
 }
 
 article {
