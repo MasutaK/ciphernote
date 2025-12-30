@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>CipherNote - Encrypted Notes</title>
+  <title>📝 CipherNote</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
@@ -23,21 +23,17 @@
   <section id="editorSection">
     <textarea id="markdownInput"></textarea>
 
-    <input
-      type="password"
-      id="passwordInput"
-      placeholder="Password (mandatory)"
-    />
+    <input type="password" id="passwordInput" placeholder="Password (mandatory)"/>
 
     <button id="generateLink">Generate link</button>
 
-    <input
-      type="text"
-      id="shareLink"
-      readonly
-      placeholder="Share link"
-    />
+    <input type="text" id="shareLink" readonly placeholder="Share link"/>
   </section>
+
+    <section id="previewSection" hidden>
+      <article id="notePreview"></article>
+      <button id="backButton" class="icon-button">← Back</button>
+    </section>
 
   <section id="viewerSection" hidden>
     <article id="markdownOutput"></article>
