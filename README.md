@@ -2,11 +2,12 @@
 
 Client-side encrypted Markdown notes, shareable through secure URLs.  
 No backend. No tracking. No storage.
-URL : https://masutak.github.io/ciphernote/index.html
+
+URL : [CipherNote here](https://masutak.github.io/ciphernote/index.html)
 
 ---
 
-## Features
+## 🚀 Features
 
 - AES-GCM encryption fully in the browser
 - Secure sharing of notes via encrypted URL hash
@@ -17,7 +18,7 @@ URL : https://masutak.github.io/ciphernote/index.html
 
 ---
 
-## How to use
+## 📁 How to use
 
 1. Write your notes in the Markdown editor.
 2. Enter a password to encrypt your note.
