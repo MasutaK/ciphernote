@@ -124,7 +124,7 @@ button:not(.icon-button):hover {
   margin-top: 1rem;
   width: 100%;
   box-sizing: border-box;
-  resize: none; /* Pas nécessaire pour input, mais ça fait pas de mal */
+  resize: none; 
   overflow-x: auto;
 }
 
