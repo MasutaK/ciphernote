@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       messageBox.classList.remove("show");
-      setTimeout(() => messageBox.classList.add("hidden"), 500); // correspond à la transition CSS
+      setTimeout(() => messageBox.classList.add("hidden"), 500); 
     }, duration);
   }
 
@@ -87,10 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const encrypted = await encryptMessage(message, password);
     const url = `${location.origin}${location.pathname}#${encodeURIComponent(encrypted)}`;
 
-    // Mettre le lien dans l'input readonly
     shareLink.value = url;
 
-    // Copier automatiquement dans le presse-papiers
     shareLink.select();
     shareLink.setSelectionRange(0, 99999); // mobile support
     document.execCommand("copy");
