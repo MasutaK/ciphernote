@@ -11,7 +11,6 @@ URL : [CipherNote here](https://masutak.github.io/ciphernote/index.html)
 
 - AES-GCM encryption fully in the browser
 - Secure sharing of notes via encrypted URL hash
-- Markdown editor with live preview
 - Dark / Light mode support (automatic + manual toggle)
 - Works entirely on GitHub Pages (static site)
 - No data stored on any server — privacy first
